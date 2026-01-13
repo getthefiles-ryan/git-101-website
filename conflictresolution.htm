@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git 101 : Conflict Resolution</title>
+    <link href="lib/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="g-base">
+    <main id="p-topic">
+      <nav id="s-navigation">
+        <div class="nav-link">
+          <i class="fas fa-home"></i><a href="index.html">Home</a>
+        </div>
+      </nav>
+
+      <div id="s-title">Conflict resolution</div>
+
+      <div id="s-definition">
+        In relation to Git control, a conflict (called a merge conflict) occurs
+        when two edits overlap between branches Common examples:
+        <ul>
+          <li>Two lines are edited differently</li>
+          <li>One branch deletes a file while the other modifies it</li>
+          <li>A file is renamed in one branch but not in another</li>
+        </ul>
+      </div>
+
+      <div id="s-use-cases">
+        <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+        <ul>
+          <li>Working on the same file across multiple branches</li>
+          <li>Collaborating with teammates on shared code</li>
+          <li>Merging feature branches into main/master</li>
+          <li>Resolving conflicting changes before deployment</li>
+        </ul>
+      </div>
+
+      <div id="s-examples">
+        <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+
+        <div>
+          <div><strong>Creating a merge conflict step-by-step:</strong></div>
+          <ul>
+            <li>
+              Create a new folder anywhere on your computer called
+              <strong>"conflicts"</strong>
+            </li>
+            <li>Right click the folder and open it in VS Code</li>
+            <li>In the VS Code terminal, type:</li>
+            <div class="code">git init</div>
+            <li>
+              This initializes a new Git repository on the
+              <strong>master</strong> branch
+            </li>
+
+            <li>
+              Create a new file called <strong>favouritefruit.txt</strong>
+            </li>
+            <li>Paste the following text into the file:</li>
+            <div class="code">
+              My favourite fruit are apples! Apples are the best!
+            </div>
+            <li>Save the file</li>
+
+            <li>Stage the file:</li>
+            <div class="code">git add favouritefruit.txt</div>
+            <li>Commit the change:</li>
+            <div class="code">git commit -m "add my favourite fruit"</div>
+
+            <li>
+              Create and switch to a new branch called <strong>oranges</strong>:
+            </li>
+            <div class="code">git checkout -b oranges</div>
+
+            <li>
+              Replace the contents of <strong>favouritefruit.txt</strong> with:
+            </li>
+            <div class="code">
+              My favourite fruit are oranges! Oranges are the best!
+            </div>
+            <li>Save the file</li>
+
+            <li>Stage and commit the change:</li>
+            <div class="code">
+              git add favouritefruit.txt<br />git commit -m "add my superior
+              favourite fruit"
+            </div>
+
+            <li>Switch back to the master branch:</li>
+            <div class="code">git checkout master</div>
+
+            <li>
+              Add a new line (line 2) to <strong>favouritefruit.txt</strong>:
+            </li>
+            <div class="code">Oranges SUCK</div>
+
+            <li>Stage and commit this change:</li>
+            <div class="code">
+              git add favouritefruit.txt <br />
+              git commit -m "add information about oranges"
+            </div>
+
+            <li>Attempt to merge the oranges branch into master:</li>
+            <div class="code">git merge oranges</div>
+
+            <li>
+              If done correctly, you should now see a
+              <strong>merge conflict</strong>. Congratulations!
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div><strong>Resolving a merge conflict:</strong></div>
+          <ul>
+            <li>Open <strong>favouritefruit.txt</strong> in VS Code.</li>
+
+            <li>
+              Notice that there are lines in the file that you didn’t add:
+              <ul>
+                <li class="code"><<<<<< HEAD</li>
+                <div>at the top</div>
+
+                <li class="code">=======</li>
+                <div>in the middle</div>
+
+                <li class="code">>>>>>>> oranges</li>
+                <div>at the bottom</div>
+              </ul>
+            </li>
+
+            <li>
+              All content between "<<<<<< HEAD" and ""======="" is the content
+              from the <strong>current branch</strong>
+              (master).
+            </li>
+
+            <li>
+              All content between "======="" and ">>>>>>> oranges" is the
+              incoming change from the <strong>oranges</strong> branch.
+            </li>
+
+            <li>
+              VS Code makes resolving conflicts easy. At the top of the file,
+              you will see options such as:
+              <ul>
+                <li>Accept Current Change</li>
+                <li>Accept Incoming Change</li>
+              </ul>
+            </li>
+
+            <li>
+              For this demonstration, choose
+              <strong>Accept Incoming Change</strong>. This will remove the
+              current change and keep the oranges branch change.
+            </li>
+
+            <li>
+              Once selected, the file will return to normal and the conflict
+              markers will disappear.
+            </li>
+
+            <li>Now stage the resolved file:</li>
+            <div class="code">git add favouritefruit.txt</div>
+
+            <li>Commit the resolution:</li>
+            <div class="code">git commit -m "resolved conflict"</div>
+
+            <li>
+              You have successfully resolved the merge conflict and merged the
+              <strong>oranges</strong> branch into <strong>master</strong>!
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <footer id="s-footer">Team Members: Max and Caleb</footer>
+    </main>
+  </body>
+</html>
