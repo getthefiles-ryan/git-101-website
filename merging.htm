@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git 101 : Merging</title>
+  <link href="lib/fontawesome/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="g-base">
+  <main id="p-topic">
+    <nav id="s-navigation">
+      <div class="nav-link">
+        <i class="fas fa-home"></i><a href="index.html">Home</a>
+      </div>
+    </nav>
+
+    <div id="s-title">
+      Merging
+    </div>
+
+    <div id="s-definition">
+      Merging means combining the changes from one branch into another. It's a fundamental operation in Git that allows
+      you to integrate different lines of development and bring work from feature branches back into the main codebase.
+    </div>
+
+    <div id="s-use-cases">
+      <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+      <ul>
+        <li>Integrating completed features into the main branch</li>
+        <li>Combining bug fixes with the current codebase</li>
+        <li>Synchronizing work from multiple developers</li>
+        <li>Bringing experimental changes into production code</li>
+        <li>Consolidating multiple commits with squash merge</li>
+      </ul>
+    </div>
+
+    <div id="s-examples">
+      <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+      <ul>
+        <div>
+          <li>
+            <div>Switch to the branch you want to merge into (usually main):</div>
+            <div class="code">git switch main</div>
+          </li>
+
+          <br>
+
+          <li>
+            <div>You can also use:</div>
+            <div class="code">git checkout main</div>
+          </li>
+          <div>
+            Git switch and git checkout can be used to switch branches. Git switch is a safer command for branch
+            operations only. Git check is a command with multiple functions, which can lead to confusion and potential
+            loss of data if not used correctly.
+          </div>
+        </div>
+
+        <br>
+
+        <div>
+          <li>
+            <div>Update your branch with the latest changes before merging:</div>
+          </li>
+          <div class="code">git pull</div>
+          <div>You should ensure that the branch you switched to is updated with the latest changes from the repo
+            before
+            merging.</div>
+        </div>
+
+        <br>
+
+        <div>
+          <li>
+            <div>Merge a branch into your current branch:</div>
+          </li>
+          <div class="code">git merge demo1</div>
+          <div>This merges the "demo1" branch into your current branch.</div>
+        </div>
+
+        <br>
+
+        <div>
+          <li>
+            <div>Squash merge (combine all changes into a single commit):</div>
+          </li>
+          <div class="code">git merge --squash demo1</div>
+          <div>Squash merge is used if you want all changes from a specific branch to your current branch in a single
+            commit.</div>
+        </div>
+
+        <br>
+
+        <div>
+          <li>
+            <div>Abort a merge:</div>
+          </li>
+          <div class="code">git merge --abort</div>
+          <div>This is handy if you have any issues during a merge like a conflict that you don't want to resolve. You
+            can
+            cancel the merge and revert things back to before.</div>
+        </div>
+      </ul>
+    </div>
+
+    <footer id="s-footer">
+      Team Members: Robert and Seth
+    </footer>
+  </main>
+</body>
+
+</html>
