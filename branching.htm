@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git 101 : Branching</title>
+  <link href="lib/fontawesome/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="g-base">
+  <main id="p-topic">
+    <nav id="s-navigation">
+      <div class="nav-link">
+        <i class="fas fa-home"></i><a href="index.html">Home</a>
+      </div>
+    </nav>
+
+    <div id="s-title">
+      Branching
+    </div>
+
+    <div id="s-definition">
+      A branch is a separate work space where you can make changes and experiment without affecting the main
+      project. Branches serve as an abstraction for the edit/stage/commit
+      process, allowing you to work on different parts of a project without touching the main branch.
+    </div>
+
+    <div id="s-use-cases">
+      <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+      <ul>
+        <li>Work safely on new features without affecting the main codebase</li>
+        <li>Experiment with new ideas</li>
+        <li>Fix bugs in isolation</li>
+        <li>Collaborate without breaking the project</li>
+        <li>Test features before merging into main</li>
+      </ul>
+    </div>
+
+    <div id="s-examples">
+      <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+      <div>
+        <h3>Create a New Branch:</h3>
+        <ul>
+          <div class="code">git branch demo1</div>
+        </ul>
+      </div>
+      <div>
+        <h3>List all branches:</h3>
+        <ul>
+          <div class="code">git branch</div>
+          <div class="code">demo1
+            <br>
+            * main
+          </div>
+          <div>The * next to main specifies the branch we are currently on.</div>
+        </ul>
+      </div>
+      <div>
+
+        <h3>Switch Between Branches:</h3>
+        <ul>
+          <li>
+            Switch to another branch
+          </li>
+          <div class="code">git switch demo1</div>
+          <div>Moves you to the "demo1" branch.</div>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <div>Create and switch to a new branch:</div>
+          <div class="code">git switch -c demo2</div>
+          <div>This will create the "demo2" branch and switches you to that branch.</div>
+        </ul>
+      </div>
+      <div>
+
+        <h3>Delete a branch:</h3>
+        <ul>
+          <li>
+            <div>This deletes a branch that is no longer needed. This is typically used after a branch has been merged
+              when
+              the work on the branch is done.</div>
+          </li>
+          <div class="code">git branch -d demo1</div>
+        </ul>
+      </div>
+    </div>
+
+    <footer id="s-footer">
+      Team Members: Robert and Seth
+    </footer>
+  </main>
+</body>
+
+</html>
