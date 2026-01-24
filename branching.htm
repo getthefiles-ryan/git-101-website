@@ -42,50 +42,46 @@
       <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
       <div>
         <h3>Create a New Branch:</h3>
-        <ul>
-          <div class="code">git branch demo1</div>
-        </ul>
+        <div class="code">git branch [new branch]</div>
       </div>
       <div>
         <h3>List all branches:</h3>
-        <ul>
-          <div class="code">git branch</div>
-          <div class="code">demo1
-            <br>
-            * main
-          </div>
-          <div>The * next to main specifies the branch we are currently on.</div>
-        </ul>
+        <div>Provides a list of all the current branches in your project.</div>
+        <div class="code">git branch</div>
+        <div class="code">[branch name]<br>* main</div>
+        <div>The * next to main specifies the branch we are currently on.</div>
       </div>
       <div>
-
         <h3>Switch Between Branches:</h3>
         <ul>
           <li>
-            Switch to another branch
+            Switch to another branch:
+            <div class="code">git switch [branch name]</div>
           </li>
-          <div class="code">git switch demo1</div>
-          <div>Moves you to the "demo1" branch.</div>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <div>Create and switch to a new branch:</div>
-          <div class="code">git switch -c demo2</div>
-          <div>This will create the "demo2" branch and switches you to that branch.</div>
-        </ul>
-      </div>
-      <div>
 
-        <h3>Delete a branch:</h3>
-        <ul>
           <li>
-            <div>This deletes a branch that is no longer needed. This is typically used after a branch has been merged
-              when
-              the work on the branch is done.</div>
+            <div>You can also use:</div>
+            <div class="code">git checkout [branch name]</div>
+            <div>
+              Git switch and git checkout can be used to switch branches. Git switch is a safer command for branch
+              operations only. Git checkout is a command with multiple functions, which can lead to confusion and
+              potential
+              loss of data if not used correctly.
+            </div>
           </li>
-          <div class="code">git branch -d demo1</div>
+
+          <li>
+            <div>You can create and switch to a new branch at the same time:</div>
+            <div class="code">git switch -c [branch name]</div>
+          </li>
         </ul>
+      </div>
+
+      <div>
+        <h3>Delete a branch:</h3>
+        <div>This deletes a branch that is no longer needed. This is typically used after a branch has been merged
+          when the work on the branch is done.</div>
+        <div class="code">git branch -d {branch name}</div>
       </div>
     </div>
 
