@@ -39,71 +39,63 @@
 
     <div id="s-examples">
       <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
-      <ul>
-        <div>
-          <li>
-            <div>Switch to the branch you want to merge into (usually main):</div>
-            <div class="code">git switch main</div>
-          </li>
 
-          <br>
+      <h3>How to Merge</h3>
+      <ol>
+        <li>
+          <div>Switch to the branch you want to merge into (usually main):</div>
+          <div class="code">git switch main</div>
+        </li>
 
-          <li>
-            <div>You can also use:</div>
-            <div class="code">git checkout main</div>
-          </li>
-          <div>
-            Git switch and git checkout can be used to switch branches. Git switch is a safer command for branch
-            operations only. Git check is a command with multiple functions, which can lead to confusion and potential
-            loss of data if not used correctly.
-          </div>
-        </div>
-
-        <br>
-
-        <div>
-          <li>
-            <div>Update your branch with the latest changes before merging:</div>
-          </li>
+        <li>
+          <div>Update your branch with the latest changes before merging:</div>
           <div class="code">git pull</div>
           <div>You should ensure that the branch you switched to is updated with the latest changes from the repo
-            before
-            merging.</div>
-        </div>
+            before merging.</div>
+        </li>
 
-        <br>
-
-        <div>
-          <li>
-            <div>Merge a branch into your current branch:</div>
-          </li>
-          <div class="code">git merge demo1</div>
+        <li>
+          <div>Merge a branch into your current branch:</div>
+          <div class="code">git merge [target branch]</div>
           <div>This merges the "demo1" branch into your current branch.</div>
-        </div>
+        </li>
+      </ol>
 
-        <br>
-
-        <div>
+      <h3>Squash Merging</h3>
+      <div>
+        <div>Squash merge is used if you want all changes from a specific branch to your current branch in a single
+          commit.</div>
+        <h4>How to Squash Merge</h4>
+        <ol>
           <li>
-            <div>Squash merge (combine all changes into a single commit):</div>
+            Create a new branch and switch over.
           </li>
-          <div class="code">git merge --squash demo1</div>
-          <div>Squash merge is used if you want all changes from a specific branch to your current branch in a single
-            commit.</div>
-        </div>
-
-        <br>
-
-        <div>
           <li>
-            <div>Abort a merge:</div>
+            Make changes such as change text, add new files, etc.
           </li>
-          <div class="code">git merge --abort</div>
-          <div>This is handy if you have any issues during a merge like a conflict that you don't want to resolve. You
-            can
-            cancel the merge and revert things back to before.</div>
-        </div>
-      </ul>
+          <li>
+            Commit those changes.
+          </li>
+          <li>
+            Switch back to your main branch.
+          </li>
+          <li>
+            Use git command:
+            <div class="code">git merge --squash [target branch]</div>
+          </li>
+        </ol>
+        <div>You may notice that this DID NOT merge together. It simply copied all the changes made in your new
+          branch and pasted it in your main branch and then you can manually commit those changes in the main branch.
+          This keeps the project history clean and easy to read.</div>
+      </div>
+
+      <h3>Abort Merging</h3>
+      <div>
+        <div>Aborting a merge will cancel a merge that is currently in progress and returns the repo to the
+          state it was before the merge started.</div>
+        <div class="code">git merge --abort</div>
+        <div>This is handy if you have any issues during a merge like a conflict that you don't want to resolve.</div>
+      </div>
     </div>
 
     <footer id="s-footer">
