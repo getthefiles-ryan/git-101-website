@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git 101 : [Git Topic Name]</title>
+  <link href="lib/fontawesome/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="g-base">
+  <main id="p-topic">
+    <nav id="s-navigation">
+      <div class="nav-link">
+        <i class="fas fa-home"></i><a href="index.html">Home</a>
+      </div>
+    </nav>
+
+    <div id="s-title">
+      Stashing
+    </div>
+
+    <div id="s-definition">
+      Git stash allows you to temporarily save uncommitted changes so you can switch tasks without committing incomplete
+      work or losing progress.
+    </div>
+
+    <div id="s-use-cases">
+      <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+      <ul>
+        <li>Switching branches: Save uncommitted changes and switch branches</li>
+        <li>Pulling Latest Changes: Stash local changes before pulling updates to avoid conflicts</li>
+        <li>Temporary Task Switching: Pause current work, handle another task and restore changes</li>
+      </ul>
+    </div>
+
+    <div id="s-examples">
+      <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+
+      <div>
+        <div>- You make changes to a file and also create a new untracked file.</div>
+        <ul>
+          <li>eg: make changes to an index.html or any existing file</li>
+          <li>create notes.txt (new file, not added yet)</li>
+        </ul>
+      </div>
+
+      <div>
+        <div>- You realize you need to pause your work</div>
+        <div class="code">git stash</div>
+        <div>This saves changes you made to the index.html but leaves "notes.txt" behind(It dosen't get stashed)</div>
+      </div>
+
+      <div>
+        <div>- You decide you want everything saved, including new file in this case the "notes.txt" and also with a
+          message.</div>
+        <div class="code">git stash push -m "homepage changes" -u</div>
+        <div>Always include "-u" if you want to stash intracked files as well </div>
+      </div>
+
+      <div>
+        <div>- Later, you want to see what stashes exist.</div>
+        <div class="code">git stash list</div>
+        <div>Example output: </div>
+        <div>
+          "stash@{0}: On main: homepage changes"
+        </div>
+      </div>
+
+      <div>
+        <div>- You want to apply the most recent stash</div>
+        <div class="code">git stash apply</div>
+      </div>
+
+      <div>
+        <div>- You decide to apply an older stash instead.</div>
+        <div class="code">git stash apply stash@{x}</div>
+        <div>x could be any stash number</div>
+      </div>
+
+      <div>
+        <div>- You want to apply the stash and remove it from the list</div>
+        <div class="code">git stash pop</div>
+      </div>
+
+      <div>
+        <div>- You no longer need a certain stash.</div>
+        <div class="code">git stash drop stash@{x}</div>
+      </div>
+
+      <div>
+        <div>- To remove the latest stash quickly</div>
+        <div class="code">git stash drop</div>
+      </div>
+
+      <div>
+        <div>- To permanently remove all stashed changes</div>
+        <div class="code">git stash clear</div>
+      </div>
+
+    </div>
+
+    <footer id="s-footer">
+      Team Members: Seth Korantwi & Robert Jones
+    </footer>
+  </main>
+</body>
+
+</html>
