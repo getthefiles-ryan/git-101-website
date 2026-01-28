@@ -7,16 +7,16 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: 20px;
-    
-    display:flex;
+
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .g-heading {
     font-family: "share tech";
     font-size: 2.5rem;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .g-sub-heading {
@@ -29,6 +29,7 @@
 a {
     text-decoration: none;
     color: #3d5170;
+
     &:hover {
         text-decoration: underline;
     }
@@ -37,24 +38,29 @@ a {
 /* --------------------------------------------- p-home styling */
 #p-home #s-aside {
     max-width: 800px;
-    padding-top:10px;
-	padding-bottom:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-top: dotted 2px #3d5170;
-	margin-top:10px;
+    margin-top: 10px;
 }
 
 #p-home #s-topic-links {
     font-size: 1.5rem;
     max-width: 880px;
-    padding-left:50px;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     nav {
-        display:flex;
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         flex-wrap: nowrap;
-        padding-bottom:10px;
+
+        &>div {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 1.5rem;
+        }
 
         i {
             padding-right: 10px;
@@ -68,54 +74,54 @@ a {
 }
 
 #p-topic #s-navigation {
-    padding-bottom:20px;
+    padding-bottom: 20px;
 
     i {
-        padding-right:8px;
+        padding-right: 8px;
     }
 
     .nav-link {
-        padding-right:20px;
-        font-weight:bold;
+        padding-right: 20px;
+        font-weight: bold;
     }
 }
 
 #p-topic #s-title {
     font-size: 2rem;
-    font-weight:bold;
-    padding-bottom:20px;      
+    font-weight: bold;
+    padding-bottom: 20px;
 }
 
 #p-topic #s-definition {
-    font-size:1.1rem;
-    padding-bottom:20px;
+    font-size: 1.1rem;
+    padding-bottom: 20px;
 }
 
 #p-topic #s-use-cases {
-    font-size:1.1rem;
-    padding-bottom:10px;
+    font-size: 1.1rem;
+    padding-bottom: 10px;
 
-    > div:first-child {
+    >div:first-child {
         font-weight: bold;
     }
 }
 
 #p-topic #s-examples {
-    font-size:1.1rem;
-    padding-bottom:20px;
+    font-size: 1.1rem;
+    padding-bottom: 20px;
 
-    > div:first-child {
+    >div:first-child {
         font-weight: bold;
     }
 
-    > div {
-        padding-top:10px;
-        padding-bottom:10px;
+    >div {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .code {
         font-family: monospace;
-        font-size:0.9rem;
+        font-size: 0.9rem;
         background-color: #f0f0f0;
         padding: 10px;
         margin-top: 10px;
@@ -124,16 +130,16 @@ a {
 }
 
 #p-topic #s-footer {
-    font-size:0.8rem;
-    padding-top:10px;
-    font-weight:normal;
+    font-size: 0.8rem;
+    padding-top: 10px;
+    font-weight: normal;
     color: #8d8d8d;
 }
 
 /* --------------------------------------------- media queries */
 @media (max-width: 500px) {
     #p-home #s-topic-links {
-        padding-left:0;
+        padding-left: 0;
     }
 }
 
@@ -143,7 +149,9 @@ a {
         color: #FFFFFF;
     }
 
-    a, #p-home #s-topic-links i, #p-topic #s-navigation i {
+    a,
+    #p-home #s-topic-links i,
+    #p-topic #s-navigation i {
         color: #6d83a4;
     }
 
