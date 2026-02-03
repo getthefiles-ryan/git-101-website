@@ -36,6 +36,50 @@
             </ul>
         </div>
 
+        <div id="s-examples">
+            <div><i class="fa-solid fa-terminal"></i> Interactive Commands:</div>
+            <div>
+                <div>Interactive rebase last 3 commits:</div>
+                <div class="code">git rebase -i HEAD~3</div>
+            </div>
+            <div>
+                <div>Interactive rebase all commits on current branch:</div>
+                <div class="code">git rebase -i main</div>
+            </div>
+            <div>
+                <div>Continue after editing:</div>
+                <div class="code">git rebase --continue</div>
+            </div>
+            <div>
+                <div>Abort if something goes wrong:</div>
+                <div class="code">git rebase --abort</div>
+            </div>
+            <div>
+                <div>Keep commit as-is:</div>
+                <div class="code">pick</div>
+            </div>
+            <div>
+                <div>Change commit message:</div>
+                <div class="code">reword</div>
+            </div>
+            <div>
+                <div>Stop to modify commit:</div>
+                <div class="code">edit</div>
+            </div>
+            <div>
+                <div>Combine with previous commit, keep both messages:</div>
+                <div class="code">squash</div>
+            </div>
+            <div>
+                <div>Combine with previous commit, discard this message:</div>
+                <div class="code">fixup</div>
+            </div>
+            <div>
+                <div>Remove commit:</div>
+                <div class="code">drop</div>
+            </div>
+        </div>
+
         <footer id="s-footer">
             Team Members: Alex & Josh
         </footer>
