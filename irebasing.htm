@@ -37,6 +37,72 @@
         </div>
 
         <div id="s-examples">
+            <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+            <div>
+                <div>1. Start by creating an index.html file.</div>
+                <div>Paste the following into index.html:</div>
+                <div class="code">&lt;h1&gt;My Delicious Website&lt;/h1&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "initial commit"</div>
+            </div>
+            <div>
+                <div>2. Create feature branch:</div>
+                <div class="code">git checkout -b feature-pizza-page</div>
+            </div>
+            <div>
+                <div>3. Add the following to the file:</div>
+                <div class="code">&lt;div&gt;Pizza is good&lt;/div&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "add pizza page"</div>
+            </div>
+            <div>
+                <div>4. Change to:</div>
+                <div class="code">&lt;div&gt;Pizza is grate&lt;/div&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "I love pizza"</div>
+            </div>
+            <div>
+                <div>5. Fix typo to:</div>
+                <div class="code">&lt;div&gt;Pizza is great&lt;/div&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "I cant spell today"</div>
+            </div>
+            <div>
+                <div>6. Add:</div>
+                <div class="code">&lt;p&gt;Toppings: peperoni&lt;/p&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "ahskhahjakhsjkdhsa"</div>
+            </div>
+            <div>
+                <div>7. Fix to:</div>
+                <div class="code">&lt;p&gt;Toppings: pepperoni, mushrooms&lt;/p&gt;</div>
+                <div>Commit the change:</div>
+                <div class="code">git add .<br>git commit -m "YES PINEAPPLE FIGHT ME"</div>
+            </div>
+            <div>
+                <div>8. View the messy history:</div>
+                <div class="code">git log --oneline</div>
+            </div>
+            <div>
+                <div>9. Start interactive rebase:</div>
+                <div class="code">git rebase -i HEAD~5</div>
+            </div>
+            <div>
+                <div>10. Change all commits except first to "fixup":</div>
+                <div class="code">pick abc1234 add pizza page<br>
+                    fixup def5678 I love pizza<br>
+                    fixup ghi9012 I cant spell today<br>
+                    fixup jkl3456 ahskhahjakhsjkdhsa<br>
+                    fixup mno7890 YES PINEAPPLE FIGHT ME</div>
+            </div>
+            <div>
+                <div>11. View clean history - 5 commits became 1!</div>
+                <div class="code">git log --oneline</div>
+            </div>
+        </div>
+
+
+        <div id="s-examples">
             <div><i class="fa-solid fa-terminal"></i> Interactive Commands:</div>
             <div>
                 <div>Interactive rebase last 3 commits:</div>
