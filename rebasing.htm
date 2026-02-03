@@ -1,53 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git 101 : [Git Topic Name]</title>
+    <title>Git 101 : Rebasing</title>
     <link href="lib/fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body class="g-base">
+</head>
+
+<body class="g-base">
     <main id="p-topic">
-      <nav id="s-navigation">
-        <div class="nav-link">
-          <i class="fas fa-home"></i><a href="index.html">Home</a>
+        <nav id="s-navigation">
+            <div class="nav-link">
+                <i class="fas fa-home"></i><a href="index.html">Home</a>
+            </div>
+        </nav>
+
+        <div id="s-title">
+            Git Rebasing
         </div>
-      </nav>
-      
-      <div id="s-title">
-        [My Git Topic Title]
-      </div>
 
-      <div id="s-definition">
-        A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. You can think of them as a way to request a brand new working directory, staging area, and project history.
-      </div>
-
-      <div id="s-use-cases">
-        <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
-        <ul>
-          <li>Creating a new feature or fixing a bug</li>
-          <li>Starting work on a new project</li>
-          <li>Collaborating with others</li>
-          <li>List all the use cases here...</li>
-        </ul>
-      </div>
-
-      <div id="s-examples">
-        <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
-        <div>
-          <div>Creating a new branch:</div>
-          <div class="code">git branch [branch-name]</div>
+        <div id="s-definition">
+            Rebasing is the process of moving or combining a sequence of commits to a new base commit. It rewrites the
+            project history by creating brand new commits for each commit in the original branch, resulting in a linear
+            project history.
         </div>
-        <div>
-          <div>Removing a branch:</div>
-          <div class="code">git branch -d [branch-name]</div>
-        </div>
-      </div>
 
-      <footer id="s-footer">
-        Team Members: [insert names of team members here]
-      </footer>
+        <div id="s-use-cases">
+            <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+            <ul>
+                <li>Maintaining a clean, linear project history</li>
+                <li>Incorporating upstream changes into your feature branch</li>
+                <li>Cleaning up local commits before pushing to a shared repository</li>
+                <li>Squashing multiple commits into a single, coherent commit</li>
+                <li>Reordering or editing commit messages before merging</li>
+            </ul>
+        </div>
+
+        <div id="s-examples">
+            <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+            <div>
+                <div>1. Initialize repository:</div>
+                <div class="code">git init</div>
+            </div>
+            <div>
+                <div>2. Create index.txt with:</div>
+                <div class="code">My Website</div>
+                <div class="code">git add .<br>git commit -m "Add title"</div>
+            </div>
+            <div>
+                <div>3. Add another commit to main. Edit index.txt to:</div>
+                <div class="code">My Website<br>Welcome to my sit</div>
+                <div class="code">git add .<br>git commit -m "Add welcome text"</div>
+            </div>
+            <div>
+                <div>4. Create feature branch:</div>
+                <div class="code">git checkout -b feature-contact</div>
+            </div>
+            <div>
+                <div>5. Add commits to feature branch. Edit index.html to:</div>
+                <div class="code">My Website<br>Welcome to my
+                    site<br>Contact Me</div>
+                <div class="code">git add .<br>git commit -m "Add contact heading"</div>
+            </div>
+            <div>
+                <div>Edit index.txt to:</div>
+                <div class="code">My Website<br>Welcome to my
+                    site<br>Contact Me<br>Email: me@example.com</div>
+                <div class="code">git add .<br>git commit -m "Add email"</div>
+            </div>
+            <div>
+                <div>6. Go back to main and add more commits:</div>
+                <div class="code">git checkout main</div>
+                <div>Edit index.txt to:</div>
+                <div class="code">My Website<br>Welcome to my
+                    site<br>This site was built in 2026</div>
+                <div class="code">git add .<br>git commit -m "Add footer"</div>
+            </div>
+            <div>
+                <div>7. Rebase feature branch onto main:</div>
+                <div class="code">git checkout feature-contact<br>git rebase main</div>
+                <div>You'll get a conflict! Open index.txt and you'll see conflict markers with
+                    &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt;</div>
+            </div>
+            <div>
+                <div>8. Fix the conflict by editing the file to keep both changes (remove conflict markers):</div>
+                <div class="code">My Website<br>Welcome to my
+                    site<br>This site was built in 2026<br>Contact
+                    Me<br>Email: me@example.com</div>
+                <div class="code">git add .<br>git rebase --continue</div>
+                <div>If there's another conflict, fix it the same way, then continue again. Done!</div>
+            </div>
+
+            <div><i class="fa-solid fa-terminal"></i><b>Commands for Rebasing:</b></div>
+
+            <div>
+                <div>Rebase current branch onto main:</div>
+                <div class="code">git rebase main</div>
+            </div>
+            <div>
+                <div>Continue rebase after resolving conflicts:</div>
+                <div class="code">git rebase --continue</div>
+            </div>
+            <div>
+                <div>Abort an in-progress rebase:</div>
+                <div class="code">git rebase --abort</div>
+            </div>
+            <div>
+                <div>Skip current commit during rebase:</div>
+                <div class="code">git rebase --skip</div>
+            </div>
+        </div>
+
+        <footer id="s-footer">
+            Team Members: Alex & Josh
+        </footer>
     </main>
-  </body>
+</body>
+
 </html>
