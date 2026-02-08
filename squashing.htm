@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git 101 : [Git Topic Name]</title>
+    <link href="lib/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="g-base">
+    <main id="p-topic">
+      <nav id="s-navigation">
+        <div class="nav-link">
+          <i class="fas fa-home"></i><a href="index.html">Home</a>
+        </div>
+      </nav>
+
+      <div id="s-title">Squashing</div>
+
+      <div id="s-definition">
+        Git squashing combines multiple commits into a single commit when a
+        branch is rebased or merged into another branch. This helps to reduce
+        the number of commits cluttering git log, makes navigating the commit
+        history easier and can reduce the number of merge conflicts.
+      </div>
+
+      <div id="s-use-cases">
+        <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+        <ul>
+          <li>When including a branch into the main or production branch</li>
+          <li>When a cleaner commit history is needed</li>
+          <li>
+            When a branch has many commits with minor changes or work in
+            progress commits
+          </li>
+          <li>
+            When a project requires a single commit for included features and
+            changes
+          </li>
+        </ul>
+      </div>
+
+      <div id="s-examples">
+        <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+        <div>
+          <div>When merging a branch:</div>
+          <div class="code">git merge --squash [branch-name]</div>
+          <div>
+            When the branch is commited after merging all commits from the
+            incoming branch will be squashed into one.
+          </div>
+        </div>
+        <div>
+          <div>When markng commits in the interactive rebase editor:</div>
+          <div class="code">squash [commit to squash]</div>
+          <div>
+            The marked commits will be squashed when rebasing is finalized.
+          </div>
+        </div>
+      </div>
+
+      <footer id="s-footer">Team Members: Drew Maceachern, James Wilson</footer>
+    </main>
+  </body>
+</html>
