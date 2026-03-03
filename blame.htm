@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git 101: Blame</title>
+  <link href="lib/fontawesome/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="g-base">
+  <main id="p-topic">
+
+    <nav id="s-navigation">
+      <a href="index.html" class="nav-link">
+        <i class="fas fa-home" aria-hidden="true"></i> Home
+      </a>
+    </nav>
+
+    <header>
+      <h1>Git Blame</h1>
+    </header>
+
+    <section id="s-definition">
+      <p>
+        <strong>git blame</strong> is a Git command that annotates each line in a file with:
+      </p>
+      <ul>
+        <li>The last commit that modified the line</li>
+        <li>The author of the commit</li>
+        <li>The timestamp of the change</li>
+        <li>The line number and code content</li>
+      </ul>
+    </section>
+
+    <section id="s-examples">
+      <h2><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> How to Use</h2>
+      <pre><code>git blame filename</code></pre>
+      <p>Press <strong>Enter</strong> to scroll through the file.</p>
+      <p>Press <strong>q</strong> to quit.</p>
+    </section>
+
+    <section id="s-options">
+      <h2><i class="fa-solid fa-wrench" aria-hidden="true"></i> Options</h2>
+
+      <p>View a specific range of lines:</p>
+      <pre><code>git blame -L 2,5 filename</code></pre>
+
+      <p>Show the author’s email:</p>
+      <pre><code>git blame -e filename</code></pre>
+
+      <p>View commits since a specific time:</p>
+      <pre><code>git blame --since=3.months filename</code></pre>
+
+      <p>Ignore whitespace changes:</p>
+      <pre><code>git blame -w filename</code></pre>
+    </section>
+
+    <section>
+      <h2>Using GitHub</h2>
+      <p>
+        GitHub also provides a <strong>Blame</strong> button on file pages. Clicking it shows the same
+        information as <code>git blame</code>. You can click line numbers to view commit history.
+      </p>
+    </section>
+
+    <footer id="s-footer">
+      Team Members: Olivia Winstanley, Lindsay Crowell
+    </footer>
+
+  </main>
+</body>
+</html>
