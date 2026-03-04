@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git 101 : Bisect</title>
+    <link href="lib/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="g-base">
+    <main id="p-topic">
+        <nav id="s-navigation">
+            <div class="nav-link">
+                <i class="fas fa-home"></i><a href="index.html">Home</a>
+            </div>
+        </nav>
+
+        <div id="s-title">
+            Bisect
+        </div>
+
+        <div id="s-definition">
+            Bisect is a powerful Git debugging tool that uses binary search algorithm to find a specific commit that
+            caused a bug in the code, instead of searching through every commit individually.
+        </div>
+
+        <div id="s-use-cases">
+            <div><i class="fa-solid fa-wrench"></i> Use Cases:</div>
+            <ul>
+                <li>Finding where a bug was introduced to the code</li>
+                <li>Identifying the commit that caused a test to fail</li>
+                <li>Tracking down when performance started degrading</li>
+            </ul>
+        </div>
+
+        <div id="s-examples">
+            <div><i class="fa-solid fa-pen-to-square"></i> Examples:</div>
+            <div>
+                <div>Starting Bisect:</div>
+                <div class="code">git bisect start</div>
+            </div>
+            <div>
+                <div>Declaring the most recent bad commit:</div>
+                <div class="code">git bisect bad (optional [commit ID])</div>
+            </div>
+            <div>
+                <div>Declaring the commit where everything worked:</div>
+                <div class="code">git bisect good [commit ID]</div>
+            </div>
+            <div>
+                <div>Keep checking the given commits, if the bug is still there:</div>
+                <div class="code">git bisect bad</div>
+            </div>
+            <div>
+                <div>Keep checking the given commits, if the bug is NOT there:</div>
+                <div class="code">git bisect good</div>
+            </div>
+            <div>
+                <div>To exit bisect:</div>
+                <div class="code">git bisect reset</div>
+            </div>
+        </div>
+
+        <footer id="s-footer">
+            Team Members: Lindsay Crowell, Olivia Winstanley
+        </footer>
+    </main>
+</body>
+
+</html>
